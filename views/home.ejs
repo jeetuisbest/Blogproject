@@ -1,0 +1,22 @@
+<%- include('partials/header'); %>
+
+<h1>Hello</h1>
+  <p> <%= startingContent %> </p>
+
+
+
+ <!-- for(i=0 ; i<post.length ; i++){
+     console.log(post[i])
+  } -->
+
+<% posts.forEach(function(post) { %>
+
+
+<h1> <%= post.title %> </h1>
+<p> <%= post.content.substring(0 , 100) + "..."  %> <a href="/users/<%= post.id %>"> Click Here </a> </p>
+<!-- <p>post.title change with post id</p> -->
+<% }) %>
+
+
+
+<%- include('partials/footer'); %>

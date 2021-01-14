@@ -35,7 +35,7 @@ app.get("/" , function(req,res){
   Post.find({} , function(err, posts){
     res.render('home', {
       startingContent: homeStartingContent ,
-      posts : posts //collection name posts (plural ) is created
+      posts : posts
     });
 
   })
@@ -54,7 +54,7 @@ app.get("/contact" , function(req,res){
 
 app.get("/compose" , function(req,res){
   res.render('compose', {contactData });
-
+});
 
 
 app.get('/users/:post', function (req, res) {
@@ -74,11 +74,11 @@ Post.findOne({_id: requestedID} , function(err , post){
 });
 
 
- 
+
 
 
 app.post("/compose" , function (req,res){
- 
+
 
 
   const post = new Post ({
@@ -91,7 +91,7 @@ app.post("/compose" , function (req,res){
     res.redirect('/');
   });
 
-});
+}) ;
 
 
 
